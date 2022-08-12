@@ -1,16 +1,53 @@
 import { app, BrowserWindow } from "electron";
-import "./ipc";
 
 import * as path from "path";
 import * as url from "url";
+import { AppContext } from "./AppContext";
+import { Config } from "./lib/Config";
 
-let mainWindow: Electron.BrowserWindow | null;
+import { Logger } from "./lib/log/Logger";
+import { MidiControllerManager } from "./MidiControllerManager/MidiControllerManager";
+import { MidiControllerManagerConfigData } from "./MidiControllerManager/MidiControllerManagerConfig";
+
+const appContext: AppContext = {} as any;
+
+appContext.mainWindow = null;
+
+function run(): void {
+
+   Logger.level = 9;
+
+   if (!appContext.mainWindow) {
+      setTimeout(() => { run(); }, 0);
+      return;
+   }
+
+   const config = new Config<MidiControllerManagerConfigData>(app.getPath("userData"));
+   config.init();
+
+   const midiControllerManager = new MidiControllerManager(config, appContext);
+   midiControllerManager.init();
+   midiControllerManager.run();
+
+}
+
+
+function cleanup(): void {
+}
+
+
+function darwinQuit(): void {
+
+   if (process.platform !== "darwin") app.quit();
+
+}
+
 
 function createWindow() {
 
-   mainWindow = new BrowserWindow({
-      width: 1100,
-      height: 700,
+   appContext.mainWindow = new BrowserWindow({
+      width: 800,
+      height: 600,
       backgroundColor: "#1e1e1e",
       webPreferences: {
          nodeIntegration: true,
@@ -21,9 +58,9 @@ function createWindow() {
 
 
    if (process.env.NODE_ENV === "development") {
-      mainWindow.loadURL("http://localhost:4000");
+      appContext.mainWindow.loadURL("http://localhost:4000");
    } else {
-      mainWindow.loadURL(
+      appContext.mainWindow.loadURL(
          url.format({
             pathname: path.join(__dirname, "renderer/index.html"),
             protocol: "file:",
@@ -32,31 +69,23 @@ function createWindow() {
       );
    }
 
-   mainWindow.on("closed", () => {
-      mainWindow = null;
+   appContext.mainWindow.on("closed", () => {
+      cleanup();
+      appContext.mainWindow = null;
+      app.exit(0);
    });
+
 }
 
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
 app.on("ready", createWindow);
 
-// Quit when all windows are closed.
-app.on("window-all-closed", () => {
-   // On OS X it is common for applications and their menu bar
-   // to stay active until the user quits explicitly with Cmd + Q
-   if (process.platform !== "darwin") {
-      app.quit();
-   }
-});
 
 app.on("activate", () => {
-   // On OS X it"s common to re-create a window in the app when the
-   // dock icon is clicked and there are no other windows open.
-   if (mainWindow === null) {
-      createWindow();
-   }
+   if (appContext.mainWindow === null) createWindow();
 });
 
+app.on("window-all-closed", darwinQuit);
+
+
+run();

@@ -1,0 +1,52 @@
+:root {
+
+   --palette-dark-xx: #1e1e1e;
+   --palette-dark-x: #2e2e2e;
+   --palette-dark: #5f5f5f;
+   --palette-light: #a3a3a3;
+   --palette-light-x: #e3e3e3;
+   --palette-light-xx: #f3f3f3;
+
+   --color-primary: #007bff;
+   --color-secondary: #6c757d;
+   --color-success: #28a745;
+   --color-warning: #ffc107;
+   --color-danger: #dc3545;
+   --color-info: #17a2b8;
+   --color-dark-xx: var(--palette-dark-xx);
+   --color-dark-x: var(--palette-dark-x);
+   --color-dark: var(--palette-dark);
+   --color-light: var(--palette-light);
+   --color-light-x: var(--palette-light-x);
+   --color-light-xx: var(--palette-light-xx);
+   --color-white: var(--palette-light-xx);
+
+   --has-border-radius: 1; /* 0 = no radius, 1 = radius specified bellow */
+
+   --font-family: Verdana, Geneva, Tahoma, sans-serif;
+   --font-size: 12px;
+
+   --dialog-background-color: var(--palette-dark-xx);
+   --dialog-title-background-color: var(--table-th-background-color);
+   --dialog-title-padding: 0.75em 1em;
+   --dialog-padding: 0 1em 1em;
+   --dialog-border: 2px solid var(--color-dark);
+
+   --control-height: 2em;
+   --control-padding: 0 1em;
+   --control-min-width: 8em;
+
+   --control-margin-size: 0.5em;
+   --control-margin: 0 0 var(--control-margin-size);
+
+   --control-border-color: var(--color-dark);
+   --control-border: 1px solid var(--color-dark);
+   --control-border-radius: calc(calc(var(--control-height) / 2) * var(--has-border-radius));
+
+   --table-th-border-color: var(--color-dark-xx);
+   --table-th-background-color: var(--color-dark-x);
+
+   --table-td-border-color: var(--color-dark-x);
+   --table-th-background-highlight-color: var(--color-dark);
+
+}

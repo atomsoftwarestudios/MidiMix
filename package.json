@@ -21,11 +21,13 @@
     "package:dist": "electron-builder --dir"
   },
   "dependencies": {
+    "midi": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/electron": "^1.6.10",
+    "@types/midi": "^2.0.0",
     "@types/node": "^16.11.45",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
@@ -36,6 +38,7 @@
     "css-loader": "^6.7.1",
     "electron": "^19.0.8",
     "electron-builder": "^23.3.2",
+    "electron-rebuild": "^3.2.9",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.30.1",

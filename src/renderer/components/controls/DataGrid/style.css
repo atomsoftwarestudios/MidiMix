@@ -1,0 +1,20 @@
+.DataGrid-container {
+   overflow: auto;
+   position: relative;
+   border: var(--control-border);
+   border-radius: var(--control-border-radius);
+}
+
+.DataGrid-container table {
+   table-layout: fixed;
+   min-width: 100%;
+}
+
+.DataGrid-container thead th  {
+   position: sticky;
+   top: 0px;
+}
+
+.DataGrid-container tbody tr[data-selected="true"] td {
+   background-color: var(--table-th-background-highlight-color);
+}
