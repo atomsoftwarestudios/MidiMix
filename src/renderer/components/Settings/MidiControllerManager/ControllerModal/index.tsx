@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import Modal from "../../controls/Modal";
+import Modal from "../../../controls/Modal";
 
-import * as services from "../../../services";
+import * as services from "../../../../services";
 
-import { IpcMidiControllerManagerController, IpcMidiControllerManagerPorts } from "../../../services/MidiControllerManager/MidiControllerManagerIpc";
+import { IpcMidiControllerManagerController, IpcMidiControllerManagerPorts } from "../../../../services/MidiControllerManager/MidiControllerManagerIpc";
 
 import "./style.css";
-import InfoDialog from "../../controls/InfoDialog";
+import InfoDialog from "../../../controls/InfoDialog";
 
 interface Props {
    onHide: () => void;

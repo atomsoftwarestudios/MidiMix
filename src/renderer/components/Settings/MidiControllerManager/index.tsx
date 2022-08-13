@@ -1,13 +1,11 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
+import * as services from "../../../services";
+import { IpcMidiControllerManagerController, IpcMidiControllerManagerPorts } from "../../../services/MidiControllerManager/MidiControllerManagerIpc";
 
-
-import * as services from "../../services";
-import { IpcMidiControllerManagerController, IpcMidiControllerManagerPorts } from "../../services/MidiControllerManager/MidiControllerManagerIpc";
-
-import DataGrid, { DataGridDataRow, DataGridHeaderCell } from "../controls/DataGrid";
-import InfoDialog from "../controls/InfoDialog";
-import Modal from "../controls/Modal";
+import DataGrid, { DataGridDataRow, DataGridHeaderCell } from "../../controls/DataGrid";
+import InfoDialog from "../../controls/InfoDialog";
+import Modal from "../../controls/Modal";
 import ControllerModal from "./ControllerModal";
 
 export function MidiControllerManager() {

@@ -1,0 +1,51 @@
+.MixButton {
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+
+   width: 3em;
+   padding: 0.5em;
+
+   font-weight: bold;
+   font-size: 0.8em;
+
+   border: outset 1px #AAAAAA;
+   border-radius: 0.75em;
+
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #666666;
+
+   color: rgba(0, 0, 0, 1);
+   background-color: #888888;
+
+   filter: drop-shadow(3px 3px 5px black);
+
+   cursor: default;
+
+}
+
+
+.MixButton[data-down="true"] {
+   transform: scale(0.97);
+   filter: drop-shadow(1px 1px 3px black);
+}
+
+
+.MixButton[data-color="red"][data-active="true"] {
+   box-shadow: 0px 0px 5px #ff2727;
+   background-color: #ff2727;
+}
+
+
+.MixButton[data-color="green"][data-active="true"] {
+   box-shadow: 0px 0px 5px #82ff3e;
+   background-color: #82ff3e;
+}
+
+
+.MixButton[data-color="yellow"][data-active="true"] {
+   box-shadow: 0px 0px 5px #ffe83e;
+   background-color: #ffe83e;
+}

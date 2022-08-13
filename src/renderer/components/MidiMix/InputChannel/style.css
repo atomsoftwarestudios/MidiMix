@@ -1,0 +1,82 @@
+.InputChannel {
+
+   width: 90px;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   overflow: hidden;
+
+}
+
+.InputChannel .gain {
+
+   display: flex;
+   flex-direction: column;
+   justify-content: left;
+   align-items: center;
+   filter: drop-shadow(3px 3px 5px black);
+   margin-bottom: 2px;
+
+}
+
+.InputChannel .nogain {
+   height: 6em;
+}
+
+.InputChannel .pan {
+
+   display: flex;
+   flex-direction: column;
+   justify-content: left;
+   align-items: center;
+   filter: drop-shadow(3px 3px 5px black);
+   margin-bottom: 2px;
+}
+
+.InputChannel .nopan {
+   height: 6em;
+}
+
+.inputChannel .buttons {
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   flex-wrap: nowrap;
+   white-space: nowrap;
+
+   width: 90px;
+   height: 4em;
+   padding: 0.5em;
+   padding-top: 0.25em;
+   border-radius: 5px;
+   background-color: #ffffff0A;
+   margin-bottom: 2px;
+
+}
+
+.InputChannel .solo {
+   padding: 0.25em;
+}
+
+.InputChannel .noSolo {
+   margin-top: 1.8em;
+}
+
+.InputChannel .noMute {
+   margin-top: 1.8em;
+}
+
+.InputChannel .fader {
+   height: 14em;
+   padding: 0.1em;
+   margin-top: 1.75em;
+}
+
+.InputChannel>.label {
+   margin-top: 1.75em;
+   padding: 0.25em;
+   text-align: center;
+}

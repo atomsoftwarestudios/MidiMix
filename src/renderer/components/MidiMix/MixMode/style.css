@@ -1,0 +1,51 @@
+.MixMode {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+}
+
+.MixMode .output-channels {
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: 3em;
+
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+   flex-wrap: nowrap;
+   white-space: nowrap;
+
+   overflow: hidden;
+}
+
+.MixMode .output-channels > div {
+   width: 78.41px;
+}
+
+.MixMode .input-channels {
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 3em;
+   height: 510px;
+}
+
+.MixMode .input-channels .input-channels-container {
+
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+   flex-wrap: nowrap;
+   white-space: nowrap;
+
+}
+
+.MixMode .input-channels .input-channels-container .nochannel {
+   width: 90px;
+}

@@ -1,0 +1,18 @@
+.MidiMix {
+
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+
+}
+
+.MidiMix .settingsIconContainer {
+   padding: 0.5em;
+}
+
+.MidiMix .settingsIconContainer .settingsIcon {
+   width: 1.25em;
+   height: 1.25em;
+}
